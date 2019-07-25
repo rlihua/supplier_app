@@ -1,0 +1,124 @@
+/**login.wxss**/
+
+.page {
+    width: 100%;
+    height: 100%;
+    background-color: #ededed;
+}
+
+.login-bg-img {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 68%;
+    z-index: 0;
+}
+
+.header-shadow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 32%;
+    background-color: #ededed;
+    z-index: 1;
+}
+
+.footer-shadow {
+    position: fixed;
+    top: 32%;
+    left: 0;
+    width: 100%;
+    height: 68%;
+    background-color: rgba(237, 237, 237, 0.84);
+    z-index: 1;
+}
+
+.container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    padding: 0 70rpx;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    font-size: 30rpx;
+}
+
+.form {
+    width: 100%;
+    height: auto;
+}
+
+.form-row {
+    display: flex;
+    overflow: hidden;
+    padding: 6rpx 0;
+    height: 50rpx;
+    line-height: 50rpx;
+    margin-top: 70rpx;
+}
+
+.form-row-title {
+    margin-bottom: 80rpx;
+}
+
+.form-row:first-child {
+    margin-top: 120rpx;
+}
+
+.form-row-btn {
+    height: 90rpx;
+    line-height: 90rpx;
+    border-radius: 60rpx;
+}
+
+.form-title {
+    width: 100%;
+    text-align: center;
+    font-size: 42rpx;
+    font-weight: 600;
+}
+
+.form .bb {
+    border-bottom: 1rpx solid #d1d1d1;
+}
+
+.form-row-icon {
+    width: 80rpx;
+    height: inherit;
+}
+
+.form-row-img {
+    display: block;
+    width: 45rpx;
+    height: 45rpx;
+    margin: 5rpx auto 0;
+}
+
+.form-row-input {
+    width: 100%;
+    height: 40rpx;
+    line-height: 40rpx;
+    padding-left: 20rpx;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    color: #545454;
+    font-size: 32rpx;
+}
+
+.container .oval-btn {
+    margin: 0 auto;
+    color: #fff;
+}
+
+.logo-img {
+    position: absolute;
+    bottom: 32rpx;
+    width: 200rpx;
+    left: calc(50% - 100rpx);
+    height: 44rpx;
+}

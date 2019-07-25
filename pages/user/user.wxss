@@ -1,0 +1,71 @@
+/* pages/user/user.wxss */
+page{
+    background: #fff;
+}
+.container{
+    padding:22rpx;
+}
+.container-header{
+    color: #fff;
+    position: relative;
+}
+.header-content{
+    position: absolute;
+    left:40rpx;
+    top:45rpx;
+}
+.header-img{
+    width: 100%;
+}
+.header-left{
+    -webkit-box-flex: 5;
+    -ms-flex: 5;
+    flex: 5;
+}
+.header-right{
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+}
+.qy_num{
+    font-weight: 600;
+    font-size: 40rpx;
+}
+.qy-icon{
+    width: 40rpx;
+    vertical-align: middle;
+}
+.qy-info{
+    margin-bottom: 20rpx;
+}
+.header-icon{
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 50%;
+}
+.qy-name-view{
+    position: absolute;
+    left: 40rpx;
+    bottom: 60rpx;
+}
+.user-icon{
+    width: 55rpx;
+}
+.right-icon{
+    width: 55rpx;
+}
+.user-body{
+    padding:0 1% 0px 1% ;
+}
+.user-item{
+    padding:30rpx 0;
+    border-bottom: 1px solid #eee;
+}
+.user-item-title{
+    color:#333;
+    margin-left: 16rpx;
+    -webkit-box-flex: 6;
+    -ms-flex: 6;
+    flex: 6;
+    font-size: 36rpx;
+}

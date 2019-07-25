@@ -1,0 +1,29 @@
+<!--pages/user/user.wxml-->
+<view class="container">
+    <view class="container-header">
+        <image mode="widthFix" src="{{imgBgUrl}}user-top.png" class="header-img"></image>
+        <view class="header-content dis_flex">
+            <view class="header-left">
+                <view class="qy-info">企业ID：<text class="qy_num">552</text></view>
+                <view class="">账号：1635461632</view>
+            </view>
+            <view class="header-right">
+                <image src="" class="header-icon"></image>
+            </view>
+        </view>
+        <view class="qy-name-view"><image mode="widthFix" src="../../static/image/user/qy.png" class="qy-icon"></image>
+            厦门多维科技网络公司</view>
+    </view>
+    <view class="user-body">
+        <navigator class="user-item dis_flex">
+            <image src="../../static/image/user/password.png" mode="widthFix" class="user-icon"></image>
+            <view class="user-item-title">修改密码</view>
+            <image src="../../static/image/icon/right.png" mode="widthFix" class="right-icon"></image>
+        </navigator>
+        <view class="user-item dis_flex" catchtap="launchOut">
+            <image src="../../static/image/user/user.png" mode="widthFix" class="user-icon" style="width: 50rpx"></image>
+            <view class="user-item-title">退出登录</view>
+            <image src="../../static/image/icon/right.png" mode="widthFix" class="right-icon"></image>
+        </view>
+    </view>
+</view>

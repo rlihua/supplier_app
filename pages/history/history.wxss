@@ -1,0 +1,180 @@
+/* pages/history/history.wxss */
+page{
+    background: #f2f5f5;
+}
+.search-view{
+    -webkit-box-flex: 6.5;
+    -ms-flex: 6.5;
+    flex: 6.5;
+    background: #fff;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+.query-input-view{
+    position: relative;
+    -webkit-box-flex: 6;
+    -ms-flex: 6;
+    flex: 6;
+    padding:30rpx 20rpx;
+    border-top-right-radius: 8rpx;
+    border-bottom-right-radius: 8rpx;
+}
+.search-icon-view{
+    border-top-left-radius: 8rpx;
+    border-bottom-left-radius: 8rpx;
+    height: 100%;
+    padding-left: 20rpx;
+}
+.query-date-view{
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    line-height: 102rpx;
+}
+.search-icon{
+    width: 40rpx;
+}
+.date-icon{
+    width: 40rpx;
+}
+.query-conditions-view{
+    width: 95%;
+    margin-top:30rpx;
+    margin-bottom:15rpx;
+    margin-left:4%;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+.container-body{
+    width: 92%;
+    margin: auto;
+    padding-top: 260rpx;
+}
+.container-header{
+    position: fixed;
+    left:0px;
+    width: 100%;
+    z-index: 20;
+    background: #f2f5f5;
+}
+.show-date-view{
+    position: relative;
+    font-size: 30rpx;
+    color:#666;
+    padding: 24rpx 0 24rpx 4% ;
+    background: #F1F9FA;
+}
+.close-icon{
+    width: 28rpx;
+    text-align: center;
+}
+.rclose-icon{
+    width: 40rpx;
+    position: absolute;
+    right: 12rpx;
+    top:30rpx;
+    z-index: 21;
+}
+.close-text{
+    position: absolute;
+    top:0rpx;
+    right: 0rpx;
+    width:100rpx;
+    height:90rpx;
+    line-height:90rpx;
+}
+.order-item{
+    background: #fff;
+    border-radius: 8rpx;
+    padding:30rpx;
+    color: #666;
+    position: relative;
+    margin-bottom: 30rpx;
+    box-shadow: 1px 2px 6px 1px #eee;
+}
+.order-des{
+    margin:20rpx 0rpx;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    width: 90%;
+}
+.order-date-view{
+    position: relative;
+}
+.right-icon{
+    width: 50rpx;
+    position: absolute;
+    right: -10rpx;
+    top:0rpx;
+}
+.color-item{
+    position: absolute;
+    left:0px;
+    top:0px;
+    height: 100%;
+    width: 6rpx;
+    border-top-left-radius: 8rpx;
+    border-bottom-left-radius: 8rpx;
+}
+/*日期选择*/
+.select-date-view{
+    position: fixed;
+    top:0px;
+    left:0px;
+    width: 100%;
+    height: 100%;
+    z-index: 20;
+    background: rgba(0,0,0,.6);
+}
+.select-date-body{
+    position: absolute;
+    width: 600rpx;
+    height: 414rpx;
+    border-radius: 8rpx;
+    background: #ffff;
+    left:0px;
+    right:0px;
+    bottom: 0px;
+    top:0px;
+    margin:auto;
+    font-size: 34rpx;
+}
+.select-date-title{
+    padding:50rpx;
+    color:#666;
+}
+.select-input-line{
+    padding:0px 40rpx 50rpx;
+}
+.select-close{
+    border-right: 1px solid #eee;
+}
+.select-close,.select-ensure{
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    padding:40rpx 0px;
+}
+.select-date-footer{
+    border-top:1px solid #eee;
+}
+.start-date,.end-date{
+    display: inline-block;
+    width: 228rpx;
+    height: 50rpx;
+    padding:20rpx 0rpx;
+    border:1px solid #eee;
+    border-radius: 8rpx;
+
+}
+/*日期选择*/
+.complete,.loading,.perform-view{
+    margin-bottom: 20rpx;
+    color:#999;
+}
+.no-data-view image{
+    width: 45%;
+}

@@ -1,0 +1,43 @@
+<!--index.wxml-->
+<view class="container">
+    <view class="contain-header">
+        <view class="contain-header1">
+            <image mode="widthFix" src="{{imgBgUrl}}index-top.png" class="header-img"></image>
+            <view class="header-content">
+                <view class="header-title">本月合计订单</view>
+                <text class="header-num">{{orderSum}}</text>笔
+            </view>
+        </view>
+    </view>
+    <view class="contain-body">
+        <navigator url="../details/details"
+              wx:for="{{orderGroup}}"
+              wx:for-index="idx"
+              wx:for-item="itemName"
+              wx:key="idx"
+               class="contain-content dis_flex {{itemName['class']}}"
+               wx:if="{{orderGroup.length>0 && !itemName['showStatus']}}">
+            <view class="content-left">
+                <text class="color-item" style="background: {{color_arr[idx%3]}}"></text>
+                <view class="order-date">{{itemName.id}}到货日期：<text class="order-date-text">{{itemName.date}}</text></view>
+                <view class="order-info">{{itemName.des}}</view>
+            </view>
+            <view class="content-right">
+                <text class="take-order-btn main_bg_color" data-index="{{idx}}" id="{{itemName.id}}" data-item="{{itemName}}" catchtap="doTakeOrder">接单</text>
+            </view>
+        </navigator>
+    </view>
+    <view class="perform-view">
+        <view class="loading text-center"
+              wx:if="{{searchLoading}}">
+            <text class="fa fa-spinner fa-spin"></text>正在载入更多...
+        </view>
+        <view class="loading complete text-center"
+              wx:if="{{loadingSuccess && orderGroup.length>0}}">
+            已加载全部</view>
+        <view class="no-data-view text-center" wx:if="{{noData && orderGroup.length<=0}}">
+            <image src="{{imgBgUrl}}no-data.png" mode="widthFix"></image>
+            <view>还没有订单哦~</view>
+        </view>
+    </view>
+</view>

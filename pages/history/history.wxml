@@ -1,0 +1,86 @@
+<!--pages/history/history.wxml-->
+<view class="container">
+    <view class="container-header">
+        <view class="query-conditions-view dis_flex">
+            <view class="search-view dis_flex">
+                <view class="search-icon-view">
+                    <image src="../../static/image/icon/search.png" mode="widthFix" class="search-icon"></image>
+                </view>
+                <view class="query-input-view">
+                    <input type="text" placeholder="商品/订单号" class="" bindinput='onInput' value="{{inputValue}}"/>
+                    <image src="../../static/image/icon/rclose.png"
+                           class="rclose-icon"
+                           mode="widthFix"
+                           catchtap="clearInput"
+                           wx:if="{{inputValue}}"></image>
+                </view>
+            </view>
+            <view class="query-date-view text-center" catchtap="doShowSelectDate">
+                <image src="../../static/image/icon/date.png" mode="widthFix" class="date-icon"></image>
+            </view>
+        </view>
+        <view class="show-date-view" wx:if="{{startDate && endDate && doEnsureStatus}}">
+            搜索时间区间：{{startDate}}—{{endDate}}
+            <view class="close-text text-center" catchtap="closeDate">
+                <image src="../../static/image/icon/close.png" mode="widthFix" class="close-icon"></image>
+            </view>
+        </view>
+    </view>
+    <view class="container-body" style="padding-top:{{paddingTop}}">
+        <!--<picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+            <view class="picker">
+                当前选择: {{date}}
+            </view>
+        </picker>-->
+        <block wx:for="{{orderGroup}}"
+               wx:for-index="idx"
+               wx:for-item="itemName"
+               wx:key="idx">
+            <navigator url="../details/details" class="order-item">
+                <text class="color-item" style="background: {{color_arr[idx%3]}}"></text>
+                <view class="order-date-view">到货日期：
+                    <text class="order-date">2019-5-20</text>
+                    <image src="../../static/image/icon/right.png" mode="widthFix" class="right-icon"></image>
+                </view>
+                <view class="order-des">优质红豆 x 3箱;优质红豆 x 3箱接发手机卡佛菩萨翻盘【上课佛菩萨开发票时卡皮肤恐怕是卡夫卡撒派克服萨克翻盘;</view>
+                <view class="order-num">订单号 86852656</view>
+            </navigator>
+        </block>
+        <view class="perform-view">
+            <view class="loading text-center"
+                  wx:if="{{searchLoading}}">
+                <text class="fa fa-spinner fa-spin"></text>正在载入更多...
+            </view>
+            <view class="loading complete text-center"
+                  wx:if="{{loadingSuccess && orderGroup.length>0}}">
+                已加载全部</view>
+            <view class="no-data-view text-center" wx:if="{{noData && orderGroup.length<=0}}">
+                <image src="{{imgBgUrl}}no-data.png" mode="widthFix"></image>
+                <view>还没有订单哦~</view>
+            </view>
+        </view>
+    </view>
+    <view class="select-date-view" wx:if="{{showDate}}">
+        <view class="select-date-body">
+            <view class="select-date-title">日期范围：</view>
+            <view class="select-input-line">
+                <picker mode="date" class="dis_inline-block" value="{{startDate}}" start="2015-01-01" end="2317-12-31" bindchange="bindStartDateChange">
+                    <view class="picker start-date text-center">
+                        {{startDate || '开始日期'}}
+                    </view>
+                </picker>
+                至
+                <picker mode="date" class="dis_inline-block" value="{{endDate}}" start="2015-01-01" end="2317-12-31" bindchange="bindEndDateChange">
+                    <view class="picker end-date text-center">
+                        {{endDate || '结束日期'}}
+                    </view>
+                </picker>
+            </view>
+
+            <view class="select-date-footer dis_flex text-center">
+                <view class="select-close" catchtap="doDateClose">取消</view>
+                <view class="select-ensure main_color" catchtap="doDateEnsure">确定</view>
+            </view>
+        </view>
+    </view>
+</view>

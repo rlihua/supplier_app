@@ -1,0 +1,3 @@
+<view class="show-layer">
+    <view class="show-body">{{messTitle}}</view>
+</view>

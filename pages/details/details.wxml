@@ -1,0 +1,53 @@
+<!--pages/details/details.wxml-->
+<view class="container">
+    <view class="container-header">
+        <view class="header-view"><text class="lef-sty">基本信息</text></view>
+        <view class="header-body">
+            <view class="content-item dis_flex"
+                  wx:for="{{orderInfo.basicsInfo}}"
+                  wx:for-index="idx"
+                  wx:for-item="itemName"
+                  wx:key="idx" >
+                <view class="content-left">{{itemName.label}}</view>
+                <view class="content-right">{{itemName.value}}</view>
+            </view>
+            <view class="content-note dis_flex">
+                <view class="note-title-view"><text class="note-title">备注</text></view>
+                <view class="note-content">
+                    好极了！！就发到手机佛世界佛撒娇佛教扫放假哦啊是附近啪请接收佛撒房间都是风景哦受打击佛教撒副教授积分怕设计费夫妻爱上
+                </view>
+            </view>
+            <view class="content-phone text-center" catchtap="callPhone" data-phone="123456">
+                <image src="../../static/image/icon/phone.png" class="phone-icon"></image>致电客户
+            </view>
+        </view>
+    </view>
+    <view class="container-header">
+        <view class="header-view"><text class="lef-sty">商品（共3种）</text></view>
+        <view class="header-body">
+            <view class="content-item dis_flex"
+                  wx:for="{{orderInfo.basicsInfo}}"
+                  wx:for-index="idx"
+                  wx:for-item="itemName"
+                  wx:key="idx" >
+                <view class="content-left goods-left">
+                    <image src="../../static/image/testImg.png"
+                           mode="widthFix"
+                           class="goods-img"></image>
+                </view>
+                <view class="goods-right">
+                    <view class="goods-title">抹茶放假啊我</view>
+                    <view class="goods-des">
+                        数量：<text class="goods-num margin-right-10">20</text>箱<text class="unit-price-text">单价： <text class="unit-price ">45</text>元/箱</text>
+                    </view>
+                    <view class="goods-sum-view">
+                        小计：<text class="goods-sum margin-right-10">200</text>元
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="container-footer" catchtap="doTakeOrder">
+        <view class="take-order-view main_bg_color text-center">接单</view>
+    </view>
+</view>

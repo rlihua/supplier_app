@@ -1,0 +1,34 @@
+<!--index.wxml-->
+<image src='../../static/image/login/login-bg.png' class='login-bg-img'></image>
+<view class='header-shadow'></view>
+<view class='footer-shadow'></view>
+<view class="container">
+    <view class='form'>
+        <view class='form-row form-row-title'>
+            <view class='form-title main_color'>供应商端</view>
+        </view>
+        <view class='form-row bb'>
+            <view class='form-row-icon'>
+                <image src='../../static/image/login/xlh.png' class='form-row-img'></image>
+            </view>
+            <input class='form-row-input' placeholder='{{errorTips.xlh}}' value='{{form.xlh}}' bindinput='onInput' id='xlh' placeholder-class='phipt'></input>
+        </view>
+        <view class='form-row bb'>
+            <view class='form-row-icon'>
+                <image src='../../static/image/login/phone1.png' class='form-row-img'></image>
+            </view>
+            <input class='form-row-input' placeholder='{{errorTips.zh}}' value='{{form.zh}}' bindinput='onInput' id='zh' placeholder-class='phipt'></input>
+        </view>
+        <view class='form-row bb'>
+            <view class='form-row-icon'>
+                <image src='../../static/image/login/pwd.png' class='form-row-img'></image>
+            </view>
+            <input class='form-row-input' placeholder='{{errorTips.pwd}}' value='{{form.pwd}}' id='pwd' bindinput='onInput' password='true' placeholder-class='phipt'></input>
+        </view>
+        <view class='form-row form-row-btn main_bg_color'  catchtouchend='login'>
+            <view class='oval-btn '>登录</view>
+        </view>
+    </view>
+    <image src='../../static/image/login/logo.png' class='logo-img'></image>
+</view>
+<!--<showAlert mess-title="{{messTitle}}"></showAlert>-->
