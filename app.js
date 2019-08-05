@@ -1,4 +1,5 @@
 //app.js
+var regeneratorRuntime = require('./utils/regenerator-runtime/runtime.js');
 var myApi = require('./http/api.js')
 App({
     onLaunch: function () {
@@ -37,6 +38,7 @@ App({
     globalData: {
         userInfo: null,
         myApi: myApi,
-        imgBgUrl: myApi.imgBgUrl
+        imgBgUrl: myApi.imgBgUrl,
+        regeneratorRuntime: regeneratorRuntime
     }
 })

@@ -1,4 +1,6 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "showAlert": "/components/showAlert/index"
+  },
   "navigationBarTitleText": "我的"
 }

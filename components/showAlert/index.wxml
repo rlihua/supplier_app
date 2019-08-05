@@ -1,3 +1,16 @@
-<view class="show-layer">
-    <view class="show-body">{{messTitle}}</view>
+<view class="show-content" wx:if="{{showStatus}}">
+    <view class="show-layer">
+        <view class="show-body">
+            <view class="show-icon-view text-center" wx:if="{{messIcon}}">
+                <image src="{{messIcon}}" class="show-icon-img" mode="widthFix"></image>
+            </view>
+            <view class="show-title text-center">
+                {{messTitle}}
+            </view>
+            <view class="show-footer dis_flex text-center">
+                <view class="show-close" catchtap="_doClose">取消</view>
+                <view class="show-ensure main_color" catchtap="_doEnsure">确定</view>
+            </view>
+        </view>
+    </view>
 </view>

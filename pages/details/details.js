@@ -8,38 +8,32 @@ Page({
      * 页面的初始数据
      */
     data: {
-        id: 1,
+        id: 0,
         placeClass: 'placeClass',
-        orderInfo: {
-            "basicsInfo": [
-                {
-                    "label": '需到货日期',
-                    "value": '2019-05-20'
-                }, {
-                    "label": '订货日期',
-                    "value": '2019-05-20'
-                }, {
-                    "label": '联系人',
-                    "value": '阮'
-                }, {
-                    "label": '手机号',
-                    "value": '18887655220'
-                }, {
-                    "label": '订单号',
-                    "value": '2164156154185'
-                }, {
-                    "label": '送货地址',
-                    "value": '福建省厦门市湖里区观音山雀氏财富中心11楼'
-                }
-            ]
-        }
+        imgBgUrl: myApi.imgBgUrl,
+        orderInfo: {},
+        loadingStatus: true,
+        loadingTip: '加载中...',
+        loadingImg: '',
+        orderStatus: 0,//1 已接单，0未接单
+        pageflag: 0,//1表示从历史订单中进来的，2表示从首页列表中进来
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-
+        this.setData({
+            loadingStatus: true
+        })
+        tool.checkLoginInfo()
+        if(options.id) {
+            this.setData({
+                id: options.id,
+                pageflag: options.pageflag
+            })
+        }
+        this.getOrderInfo()
     },
 
     /**
@@ -67,7 +61,17 @@ Page({
      * 生命周期函数--监听页面卸载
      */
     onUnload: function () {
-
+        /*console.log('页面卸载了')
+        console.log(getCurrentPages())
+        let pages = getCurrentPages()
+        pages.some((item,index) => {
+            if(item.route == 'pages/history/history') {
+                item.setData({
+                    pageflag: 2
+                })
+                return true
+            }
+        })*/
     },
 
     /**
@@ -101,9 +105,24 @@ Page({
             id = _this.data.id,
             param = { id:id,show: true,title: '接单中...'}
         myApi.myPost('doTakeOrder',param).then(res => {
-            if(res.message.status == 1) {//接单成功
+            if(res.message.return_code == 200) {//接单成功
+                _this.setData({
+                    rewsClass: 'animated fadeOutDownBig'
+                })
                 tool.showMyToast({'title': '接单成功','duration':800})
             }
+        })
+    },
+    getOrderInfo() {
+        let _this = this,
+            id = _this.data.id,
+            param = { id:id,show: true,title: '加载中...'}
+        myApi.myPost('GetOrderInfo',param).then(res => {
+             _this.setData({
+                 orderInfo: res.message.data,
+                 loadingStatus: false,
+                 orderStatus: res.message.orderStatus
+             })
         })
     }
 })

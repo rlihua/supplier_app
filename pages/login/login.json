@@ -1,6 +1,6 @@
 {
     "usingComponents": {
-        "showAlert": "/components/showAlert/index"
+
     },
     "navigationBarTitleText": "登录",
     "navigationBarBackgroundColor": "#EDEDED",

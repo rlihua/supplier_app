@@ -1,0 +1,10 @@
+<template name="showLoading">
+    <view class="loading-view-layer">
+        <view class="loading-view-body">
+            <view class="img-icon-view">
+                <image src="{{loadingImg}}" class="loading-img-icon" mode="widthFix"></image>
+                <!--<view class="tip-title" wx:if="{{loadingTip}}">{{loadingTip}}</view>-->
+            </view>
+        </view>
+    </view>
+</template>

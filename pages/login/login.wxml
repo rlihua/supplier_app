@@ -11,19 +11,19 @@
             <view class='form-row-icon'>
                 <image src='../../static/image/login/xlh.png' class='form-row-img'></image>
             </view>
-            <input class='form-row-input' placeholder='{{errorTips.xlh}}' value='{{form.xlh}}' bindinput='onInput' id='xlh' placeholder-class='phipt'></input>
+            <input class='form-row-input' placeholder='{{errorTips.xlh}}' value='{{form.xlh}}' bindinput='onInput' id='xlh' placeholder-class='phipt'/>
         </view>
         <view class='form-row bb'>
             <view class='form-row-icon'>
                 <image src='../../static/image/login/phone1.png' class='form-row-img'></image>
             </view>
-            <input class='form-row-input' placeholder='{{errorTips.zh}}' value='{{form.zh}}' bindinput='onInput' id='zh' placeholder-class='phipt'></input>
+            <input class='form-row-input' placeholder='{{errorTips.zh}}' value='{{form.zh}}' bindinput='onInput' id='zh' placeholder-class='phipt'/>
         </view>
         <view class='form-row bb'>
             <view class='form-row-icon'>
                 <image src='../../static/image/login/pwd.png' class='form-row-img'></image>
             </view>
-            <input class='form-row-input' placeholder='{{errorTips.pwd}}' value='{{form.pwd}}' id='pwd' bindinput='onInput' password='true' placeholder-class='phipt'></input>
+            <input class='form-row-input' placeholder='{{errorTips.pwd}}' value='{{form.pwd}}' id='pwd' bindinput='onInput' password='true' placeholder-class='phipt'/>
         </view>
         <view class='form-row form-row-btn main_bg_color'  catchtouchend='login'>
             <view class='oval-btn '>登录</view>
@@ -31,4 +31,4 @@
     </view>
     <image src='../../static/image/login/logo.png' class='logo-img'></image>
 </view>
-<!--<showAlert mess-title="{{messTitle}}"></showAlert>-->
+

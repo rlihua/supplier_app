@@ -1,8 +1,10 @@
 /**app.wxss**/
-/*@import "static/css/animate.wxss";*/
+@import "static/css/animate.wxss";
+@import "template/loading/loading.wxss";
 page{
     padding:0px;
     margin: 0px;
+    font-family: 微软雅黑!important;
 }
 .main_color{
     color: #2BBFD6;

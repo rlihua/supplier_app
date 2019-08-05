@@ -1,3 +1,4 @@
+<import src="../../template/loading/loading.wxml"/>
 <!--pages/history/history.wxml-->
 <view class="container">
     <view class="container-header">
@@ -27,23 +28,18 @@
         </view>
     </view>
     <view class="container-body" style="padding-top:{{paddingTop}}">
-        <!--<picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
-            <view class="picker">
-                当前选择: {{date}}
-            </view>
-        </picker>-->
         <block wx:for="{{orderGroup}}"
                wx:for-index="idx"
                wx:for-item="itemName"
                wx:key="idx">
-            <navigator url="../details/details" class="order-item">
+            <navigator url="../details/details?id={{itemName['id']}}" class="order-item">
                 <text class="color-item" style="background: {{color_arr[idx%3]}}"></text>
                 <view class="order-date-view">到货日期：
-                    <text class="order-date">2019-5-20</text>
+                    <text class="order-date">{{itemName['jfrq']}}</text>
                     <image src="../../static/image/icon/right.png" mode="widthFix" class="right-icon"></image>
                 </view>
-                <view class="order-des">优质红豆 x 3箱;优质红豆 x 3箱接发手机卡佛菩萨翻盘【上课佛菩萨开发票时卡皮肤恐怕是卡夫卡撒派克服萨克翻盘;</view>
-                <view class="order-num">订单号 86852656</view>
+                <view class="order-des">{{itemName['wpxx']}}</view>
+                <view class="order-num">订单号 {{itemName['djh']}}</view>
             </navigator>
         </block>
         <view class="perform-view">
@@ -52,29 +48,27 @@
                 <text class="fa fa-spinner fa-spin"></text>正在载入更多...
             </view>
             <view class="loading complete text-center"
-                  wx:if="{{loadingSuccess && orderGroup.length>0}}">
+                  wx:if="{{!searchLoading && loadingSuccess && orderGroup.length>0}}">
                 已加载全部</view>
-            <view class="no-data-view text-center" wx:if="{{noData && orderGroup.length<=0}}">
+            <view class="no-data-view text-center" wx:if="{{!searchLoading && noData && orderGroup.length<=0}}">
                 <image src="{{imgBgUrl}}no-data.png" mode="widthFix"></image>
                 <view>还没有订单哦~</view>
             </view>
         </view>
     </view>
     <view class="select-date-view" wx:if="{{showDate}}">
-        <view class="select-date-body">
+        <view class="select-date-body" >
             <view class="select-date-title">日期范围：</view>
             <view class="select-input-line">
-                <picker mode="date" class="dis_inline-block" value="{{startDate}}" start="2015-01-01" end="2317-12-31" bindchange="bindStartDateChange">
-                    <view class="picker start-date text-center">
-                        {{startDate || '开始日期'}}
-                    </view>
-                </picker>
-                至
-                <picker mode="date" class="dis_inline-block" value="{{endDate}}" start="2015-01-01" end="2317-12-31" bindchange="bindEndDateChange">
-                    <view class="picker end-date text-center">
-                        {{endDate || '结束日期'}}
-                    </view>
-                </picker>
+                <text class='my_flexR start-date text-center'
+                      bindtap='bindDateChange'
+                      data-dateType="1"
+                      id="startDate1">{{startDate1 || '开始日期'}}</text>
+                <text class="date-bt-st">至</text>
+                <text class='my_flexR start-date text-center'
+                      bindtap='bindDateChange'
+                      data-dateType="2"
+                      id="endDate1">{{endDate1 || '结束日期'}}</text>
             </view>
 
             <view class="select-date-footer dis_flex text-center">
@@ -83,4 +77,26 @@
             </view>
         </view>
     </view>
+
+    <!-- 引用DateTimePicker -->
+    <view hidden='{{openflag}}'>
+        <DateTimePicker
+                main_color="main_color"
+                id="DateTimePicker"
+                openflag="{{openflag}}"
+                timevalue="{{value}}"
+                years="{{years}}"
+                months="{{months}}"
+                days="{{days}}"
+                hours="{{hours}}"
+                minutes="{{minutes}}"
+                title="{{dateType=='1'?'开始日期':'结束日期'}}"
+                bind:canslebtn="closeDateSelect"
+                bind:closebtn="ensureDateSelect"
+                bind:bindChangeEvent="bindChange">
+        </DateTimePicker>
+    </view>
+    <template is="showLoading"
+              data="{{loadingTip,loadingImg,loadingTipStatus}}"
+              wx:if="{{loadingStatus}}"/>
 </view>

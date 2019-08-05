@@ -54,12 +54,13 @@ page{
     height: 225rpx;
 }
 .header-title{
-    margin:20rpx 0px;
+    margin:10rpx 0px;
 }
 .header-content{
     position: absolute;
     left:30rpx;
     bottom:30rpx;
+    font-size: 16px;
 }
 .contain-body{
     background: #F2F5F5 ;
@@ -119,6 +120,9 @@ page{
     width: 6rpx;
     /*background:#FF6490;*/
     border-top-left-radius: 8rpx;
+}
+.no-data-view{
+    margin-top: 90rpx;
 }
 .no-data-view image{
     width: 45%;

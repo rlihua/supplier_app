@@ -1,12 +1,18 @@
 {
   "pages": [
+    "pages/login/login",
+    "pages/history/history",
     "pages/user/user",
+    "pages/index/index",
+
+
+
+    "pages/details/details",
+
     "pages/changePassword/changePassword",
 
-    "pages/history/history",
-    "pages/index/index",
-    "pages/details/details",
-    "pages/login/login",
+
+
     "pages/logs/logs"
   ],
   "window": {

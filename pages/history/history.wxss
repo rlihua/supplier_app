@@ -41,7 +41,7 @@ page{
 .query-conditions-view{
     width: 95%;
     margin-top:30rpx;
-    margin-bottom:15rpx;
+    margin-bottom:20rpx;
     margin-left:4%;
     -webkit-box-align: center;
     -ms-flex-align: center;
@@ -100,9 +100,19 @@ page{
     text-overflow:ellipsis;
     white-space: nowrap;
     width: 90%;
+    font-size: 16px;
 }
 .order-date-view{
     position: relative;
+    font-size: 18px;
+    font-weight: 500;
+}
+.order-date{
+    color: #151515;
+}
+.order-num{
+    color:#999;
+    font-size: 14px;
 }
 .right-icon{
     width: 50rpx;
@@ -132,7 +142,7 @@ page{
 .select-date-body{
     position: absolute;
     width: 600rpx;
-    height: 414rpx;
+    height: 420rpx;
     border-radius: 8rpx;
     background: #ffff;
     left:0px;
@@ -151,6 +161,7 @@ page{
 }
 .select-close{
     border-right: 1px solid #eee;
+    color: #999;
 }
 .select-close,.select-ensure{
     -webkit-box-flex: 1;
@@ -160,15 +171,23 @@ page{
 }
 .select-date-footer{
     border-top:1px solid #eee;
+    position: absolute;
+    bottom: 0;
+    left:0;
+    width: 100%;
 }
 .start-date,.end-date{
     display: inline-block;
-    width: 228rpx;
+    width: 225rpx;
     height: 50rpx;
     padding:20rpx 0rpx;
     border:1px solid #eee;
     border-radius: 8rpx;
 
+}
+.date-bt-st{
+    color:#999;
+    margin:0px 14rpx;
 }
 /*日期选择*/
 .complete,.loading,.perform-view{

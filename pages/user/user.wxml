@@ -1,21 +1,22 @@
 <!--pages/user/user.wxml-->
+<import src="../../template/loading/loading.wxml"/>
 <view class="container">
     <view class="container-header">
         <image mode="widthFix" src="{{imgBgUrl}}user-top.png" class="header-img"></image>
         <view class="header-content dis_flex">
             <view class="header-left">
-                <view class="qy-info">企业ID：<text class="qy_num">552</text></view>
-                <view class="">账号：1635461632</view>
+                <view class="qy-info">企业ID：<text class="qy_num">{{xlh}}</text></view>
+                <view class="">账号：{{dlzh}}</view>
             </view>
             <view class="header-right">
-                <image src="" class="header-icon"></image>
+                <image src="{{lolgo?'http://saasimg.wxdw.top/'+lolgo:imgBgUrl+'qy-img.png'}}" class="header-icon"></image>
             </view>
         </view>
         <view class="qy-name-view"><image mode="widthFix" src="../../static/image/user/qy.png" class="qy-icon"></image>
-            厦门多维科技网络公司</view>
+            {{mc}}</view>
     </view>
     <view class="user-body">
-        <navigator class="user-item dis_flex">
+        <navigator class="user-item dis_flex" url="../changePassword/changePassword" hover-class="none">
             <image src="../../static/image/user/password.png" mode="widthFix" class="user-icon"></image>
             <view class="user-item-title">修改密码</view>
             <image src="../../static/image/icon/right.png" mode="widthFix" class="right-icon"></image>
@@ -26,4 +27,14 @@
             <image src="../../static/image/icon/right.png" mode="widthFix" class="right-icon"></image>
         </view>
     </view>
+    <showAlert mess-title="{{messTitle}}"
+               mess-icon="{{messIcon}}"
+               dis_flex="dis_flex"
+               text-center="text-center"
+               show-status="{{showStatus}}"
+               bind:doEnsure="doLaunchOut"
+               main_color="main_color"></showAlert>
+    <template is="showLoading"
+              data="{{loadingTip,loadingImg,loadingTipStatus}}"
+              wx:if="{{loadingStatus}}"/>
 </view>

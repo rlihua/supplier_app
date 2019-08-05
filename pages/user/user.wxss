@@ -13,6 +13,7 @@ page{
     position: absolute;
     left:40rpx;
     top:45rpx;
+    width: 86%;
 }
 .header-img{
     width: 100%;
@@ -39,8 +40,8 @@ page{
     margin-bottom: 20rpx;
 }
 .header-icon{
-    width: 80rpx;
-    height: 80rpx;
+    width: 150rpx;
+    height: 150rpx;
     border-radius: 50%;
 }
 .qy-name-view{

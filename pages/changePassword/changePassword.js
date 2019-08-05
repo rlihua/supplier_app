@@ -17,7 +17,7 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-
+        tool.checkLoginInfo()
     },
 
     /**
@@ -84,8 +84,10 @@ Page({
                 oldPassword: oldPassword,
                 newPassword1: newPassword1,
                 newPassword2: newPassword2,
+                show: true,
+                title: '修改中...'
             }
-        if(!oldPassword){
+        /*if(!oldPassword){
             tool.showMyToast({'title': '请输入旧密码！','duration':1000})
             return false
         }
@@ -96,7 +98,7 @@ Page({
         if(!newPassword2){
             tool.showMyToast({'title': '请再次输入新密码！','duration':1000})
             return false
-        }
+        }*/
         if(newPassword1 != newPassword2) {
             tool.showMyToast({'title': '新密码和再次输入新密码不同，请重新输入！','duration':1000})
             return false
@@ -104,11 +106,16 @@ Page({
         myApi.myGet('changePassword',param).then( res => {
             if(res.message.return_code == 200) {
                 tool.showMyToast({'title': '密码修改成功','duration':800,'icon':'success'})
-                setTimeout(() => {
-                    wx.reLaunch({
-                        url: '/pages/login/login'
-                    })
-                },800)
+                try {//gsId,gysId,dlzh
+                    wx.removeStorageSync('gsId')
+                    setTimeout(() => {
+                        wx.reLaunch({
+                            url: '/pages/login/login'
+                        })
+                    },800)
+                } catch (e) {
+
+                }
             }
             _this.setData({
                 formbtnallow: true

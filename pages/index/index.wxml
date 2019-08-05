@@ -1,4 +1,5 @@
 <!--index.wxml-->
+<import src="../../template/loading/loading.wxml"/>
 <view class="container">
     <view class="contain-header">
         <view class="contain-header1">
@@ -10,7 +11,7 @@
         </view>
     </view>
     <view class="contain-body">
-        <navigator url="../details/details"
+        <navigator url="../details/details?id={{itemName['id']}}"
               wx:for="{{orderGroup}}"
               wx:for-index="idx"
               wx:for-item="itemName"
@@ -19,8 +20,8 @@
                wx:if="{{orderGroup.length>0 && !itemName['showStatus']}}">
             <view class="content-left">
                 <text class="color-item" style="background: {{color_arr[idx%3]}}"></text>
-                <view class="order-date">{{itemName.id}}到货日期：<text class="order-date-text">{{itemName.date}}</text></view>
-                <view class="order-info">{{itemName.des}}</view>
+                <view class="order-date">到货日期：<text class="order-date-text">{{itemName.jfrq}}</text></view>
+                <view class="order-info">{{itemName.wpxx}}</view>
             </view>
             <view class="content-right">
                 <text class="take-order-btn main_bg_color" data-index="{{idx}}" id="{{itemName.id}}" data-item="{{itemName}}" catchtap="doTakeOrder">接单</text>
@@ -33,11 +34,14 @@
             <text class="fa fa-spinner fa-spin"></text>正在载入更多...
         </view>
         <view class="loading complete text-center"
-              wx:if="{{loadingSuccess && orderGroup.length>0}}">
+              wx:if="{{!searchLoading && loadingSuccess && orderGroup.length>0}}">
             已加载全部</view>
         <view class="no-data-view text-center" wx:if="{{noData && orderGroup.length<=0}}">
             <image src="{{imgBgUrl}}no-data.png" mode="widthFix"></image>
             <view>还没有订单哦~</view>
         </view>
     </view>
+    <template is="showLoading"
+              data="{{loadingTip,loadingImg,loadingTipStatus}}"
+              wx:if="{{loadingStatus}}"/>
 </view>
